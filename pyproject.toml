@@ -4,7 +4,9 @@ version = "0.0.0"
 description = "Django project template to speed up the creation of django based applications"
 authors = ["malathair <malathair@spectregate.net>"]
 readme = "README.md"
-package-mode = false
+packages = [
+    { include = "src" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
