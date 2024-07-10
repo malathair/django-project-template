@@ -9,28 +9,29 @@ Example structure of a django project using this template:
     ├── pyproject.toml
     ├── README.md
     └── src/
-        ├── .env
-        ├── manage.py
-        ├── app/
-        │   ├── <app-files>
-        │   ├── api/
-        │   │   ├── v1/
-        │   │   └── v2/
-        │   ├── migrations/
-        │   ├── static/
-        │   │   └── app/
-        │   ├── templates/
-        │   │   └── app/
-        │   └── test/
-        ├── <additional-apps>/
-        └── config/
-            ├── __init__.py
-            ├── asgi.py
-            ├── settings/
-            │   ├── __init__.py
-            │   ├── general.py
-            │   ├── local.py
-            │   └── <additional-settings-files>
-            ├── urls.py
-            └── wsgi.py
+        └── project/
+            ├── .env
+            ├── manage.py
+            ├── app/
+            │   ├── <app-files>
+            │   ├── api/
+            │   │   ├── v1/
+            │   │   └── v2/
+            │   ├── migrations/
+            │   ├── static/
+            │   │   └── app/
+            │   ├── templates/
+            │   │   └── app/
+            │   └── test/
+            ├── <additional-apps>/
+            └── config/
+                ├── __init__.py
+                ├── asgi.py
+                ├── settings/
+                │   ├── __init__.py
+                │   ├── general.py
+                │   ├── local.py
+                │   └── <additional-settings-files>
+                ├── urls.py
+                └── wsgi.py
 ```
