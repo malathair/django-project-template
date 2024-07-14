@@ -15,7 +15,7 @@ DEBUG = env.bool("DJANGO_DEBUG", default=False)
 SECRET_KEY = (
     env("DJANGO_SECRET")
     if not DEBUG
-    else env("DJANGO_SECRET", default=get_random_secret_key()
+    else env("DJANGO_SECRET", default=get_random_secret_key())
 )
 ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS", default=list())
 
