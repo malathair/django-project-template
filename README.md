@@ -27,11 +27,7 @@ Example structure of a django project using this template:
             └── config/
                 ├── __init__.py
                 ├── asgi.py
-                ├── settings/
-                │   ├── __init__.py
-                │   ├── general.py
-                │   ├── local.py
-                │   └── <additional-settings-files>
+                ├── settings.py
                 ├── urls.py
                 └── wsgi.py
 ```

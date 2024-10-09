@@ -1,3 +1,11 @@
+import environ
+import os
+
+from pathlib import Path
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 # Application definition
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -69,3 +77,32 @@ STATIC_URL = "static/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# ====================== #
+#     Local Settings     #
+# ====================== #
+
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, ".env"))
+
+DEBUG = env.bool("DJANGO_DEBUG", default=False)
+
+SECRET_KEY = env("DJANGO_SECRET")
+ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS", default=list())
+
+if env.str("DATABASE_URL", default=""):
+    DATABASES = {"default": env.db()}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
+STATIC_URL = "static/"
+STATIC_ROOT = env("STATIC_ROOT")
+
+LOGIN_URL = env.str("LOGIN_URL", default="login")
+LOGIN_REDIRECT_URL = env.str("LOGIN_REDIRECT_URL", default="/")
